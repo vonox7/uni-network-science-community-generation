@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Network Science - Community Finder</title>
+  <script src="canvasView.js"></script>
+</head>
+<body>
+<div style="display:flex;">
+  <div style="flex: 1;">
+    <div>
+      Run iterations
+      <button onclick="findCommunities(1)">1 x</button>
+      <button onclick="findCommunities(10)">10 x</button>
+      <button onclick="findCommunities(100)">100 x</button>
+      <button onclick="findCommunities(1000)">1.000 x</button>
+      <button onclick="findCommunities(10000)">10.000 x</button>
+      <button onclick="findCommunities(100000)">100.000 x</button>
+      <button onclick="findCommunities(1000000)">1.000.000 x</button>
+    </div>
+    <canvas id="liveCanvas" width="1500" height="1500" style="width:750px;height:750px;"></canvas>
+  </div>
+  <div id="results" style="flex: 1;">
+    <label>
+      <input type="range" min="1" max="100" value="68" oninput="thresholdChange()" id="thresholdSlider">
+      <span id="thresholdLabel">68% Threshold</span>
+    </label>
+    <canvas id="connectionWeightCanvas" width="1500" height="1500" style="width:750px;height:750px;"></canvas>
+  </div>
+</div>
+<pre id="data"></pre>
+</body>
+</html>
